@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    /*overflow: hidden;*/
+    font-family: 'Roboto', sans-serif;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.show{
+    display: block !important;
+}
+
+#quitButton{
+    font-weight: bold;
+    padding: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    color: #2E6FF2;
+    font-size: 2rem;
+}
+
+header{
+    width: 100vw;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D8E6F2;
+    color: #2E6FF2;
+}
+
+.optionHeader{
+    min-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.inputGroupSearch{
+    border: 1px solid #fff;
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.3rem;
+    color: #2E6FF2;
+    background-color: #fff;
+}
+
+.inputGroupSearch input{
+    min-width: 250px;
+    border: none;
+    outline: none;
+    height: 1.5rem;
+    padding: 0 0.2rem;
+    color: #2E6FF2;
+}
+
+button{
+    padding: 0.5rem;
+    color: #fff;
+    background-color: #2E6FF2;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-weight: 800;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#popUp{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+#popUpAddContact {
+    padding: 5rem 2rem;
+    max-width: 450px;
+    height: max-content;
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Ajusté de justify-items à justify-content */
+    align-items: center; /* Ajouté pour centrer verticalement */
+    gap: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px, rgba(0, 0, 0, 0.07) 0 2px 4px, rgba(0, 0, 0, 0.07) 0 4px 8px, rgba(0, 0, 0, 0.07) 0 8px 16px, rgba(0, 0, 0, 0.07) 0 16px 32px, rgba(0, 0, 0, 0.07) 0 32px 64px;
+    border-radius: 0.5rem;
+    position: relative; /* Position fixe pour centrer par rapport à la fenêtre */
+    top: 50%; /* Position verticale au centre */
+    left: 50%; /* Position horizontale au centre */
+    transform: translate(-50%, -50%); /* Centrer précisément */
+}
+
+.avatarContainer {
+    text-align: center;
+}
+
+.avatar-preview {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar-preview span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2E6FF2;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+}
+
+#avatarInput{
+    display:none;
+}
+
+#popUpAddContact .inputGroup {
+    min-width: 100%;
+    color: #2E6FF2;
+}
+
+.inputGroup input {
+    width: 100%;
+    height: 2rem;
+    padding: 0 5px;
+    background: transparent;
+    border: 2px solid #2E6FF2;
+    border-radius: 2px;
+    margin-top: .5rem;
+}
+
+#popUpAddContact input[type="submit"] {
+    width: 100%;
+    height: 2rem;
+    background-color: #2E6FF2;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0 2rem !important;
+    border: none;
+}
+
+.inputGroup label{
+    margin-bottom: 4rem;
+}
+
+#popUpAddContact h1{
+    font-size: 2.5rem;
+    color: #2E6FF2;
+    margin-bottom: 2rem;
+}
+
+.inputGroup select{
+    width: 100%;
+    height: 2rem;
+    padding: 0 5px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #2E6FF2;
+    border-right: 2px solid #2E6FF2;
+    border-radius: 2px;
+    color: #2E6FF2;
+    margin-top: .5rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+#popUpAddContact button{
+    width: 100%;
+    position: relative;
+    top: 1rem;
+}
+
+#listContact{
+    width: 100%;
+    height: 85vh;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerListContact{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filterButton{
+    max-width: max-content;
+}
+
+#filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    
+}
+
+#filterOptions{
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem 0.3rem;
+    border: 1px solid #2E6FF2;
+    border-radius: 0.2rem;
+    margin-top: 0.2rem;
+    position: absolute;
+    top: 2.5rem;
+}
+
+#listContactsContainer{
+    width: 100%;
+    flex: 1;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid #2E6FF2;
+    border-radius: 0.2rem;
+    box-shadow:rgba(50, 50, 93, 0.25) 0px 10px 20px -12px inset, rgba(0, 0, 0, 0.3) 0px 7px 10px -18px inset;
+}
+
+.tableContact {
+    width: 100%;
+    display: grid;
+    grid-auto-rows: 1fr; 
+    gap: 2px;
+}
+
+.contact {
+    width: 100%;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 3fr 2fr 2fr 2fr 3fr 2.5fr;
+    grid-template-areas: "id avatar name cat num1 num2 email option";
+    gap: 2px;
+}
+
+.id{
+    grid-area: id;
+    text-align: center;
+}
+
+.avatar{
+    grid-area: avatar;
+}
+
+.avatar img{
+    width: 3rem;
+    height: 3rem;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.name{
+    grid-area: name;
+} 
+
+.cat{
+    grid-area: cat;
+} 
+
+.num1{
+    grid-area: num1;
+} 
+
+.num2{
+    grid-area: num2;
+} 
+
+.email{
+    grid-area: email;
+} 
+
+.option{
+    grid-area: option;
+    justify-content: space-around !important;
+    align-items: center;
+}
+
+.tableContact th,
+.tableContact td {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+/* Styles spécifiques pour la première ligne (en-tête) du tableau */
+.tableContact th {
+    background-color: transparent;
+    color: #2E6FF2;
+}
+
+/* Style pour les lignes impaires du tableau */
+.tableContact tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Style pour les lignes paires du tableau */
+.tableContact tr:nth-child(even) {
+    background-color: #D8E6F2;
+}
